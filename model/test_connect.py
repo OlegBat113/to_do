@@ -9,20 +9,12 @@ from decouple import config
 
 # Рекомендуется использовать переменные окружения через config
 
-dialect = 'postgresql'
-user = 'postgres'
-password = 'Adelante'
-host = 'localhost'
-port = '5432'
-database = 'todo'
-
 # psycog2 - заменил на psycopg (pip instal psycopg) - после этого заработало
-
 
 with open("data.json", mode="r", encoding="utf-8") as read_file:
     data = json.load(read_file)
 
-engine = create_engine(f"{dialect}+psycopg://{data['user']}:{data['password']}@{data['host']}/{data['database']}",
+engine = create_engine(f"postgresql+psycopg://{data['user']}:{data['password']}@{data['host']}/{data['database']}",
     echo=True,  # Включаем SQL логирование для отладки
     pool_size=5,  # Устанавливаем размер пула соединений
     max_overflow=10  # Максимальное количество дополнительных соединений
