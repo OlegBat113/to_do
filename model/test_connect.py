@@ -6,7 +6,6 @@ from sqlalchemy.orm import sessionmaker
 from  sqlalchemy.orm import declarative_base
 from decouple import config
 
-
 # Рекомендуется использовать переменные окружения через config
 
 # psycog2 - заменил на psycopg (pip instal psycopg) - после этого заработало
