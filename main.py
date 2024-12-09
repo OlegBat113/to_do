@@ -12,3 +12,8 @@ app = FastAPI()
 
 # создайте новый маршрут FastAPI /graphql и установите graphql_app в качестве обработчика маршрута.
 app.include_router(graphql_app, prefix='/graphql')
+
+if __name__ == "__main__":
+    import uvicorn
+    # запускается - moduleName:app
+    uvicorn.run("main:app", reload=True)

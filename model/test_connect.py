@@ -30,7 +30,7 @@ Base = declarative_base()
 def get_session():
     session = SessionLocal()
     try:
-        yield session
+        return session
     finally:
         session.close()
 
@@ -64,7 +64,8 @@ class Users(Base):
     nrec = Column(Integer, primary_key=True)
     name2 = Column(String)
 
-session = SessionLocal()
+#session = SessionLocal()
+session = get_session()
 # Вставка данных
 aaa1 = Users(name2="aaa1")
 session.add(aaa1)
