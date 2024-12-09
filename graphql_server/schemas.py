@@ -31,5 +31,7 @@ class UpdateTaskInput:
 
 @strawberry.input
 class PaginationInput:
+    # PaginationInput должен быть автоматически ограничен в импорте схем в resolvers.py.
     offset: int
     limit: int
+
